@@ -1,0 +1,16 @@
+name = "ysws-notifier"
+main = "src/worker.ts"
+compatibility_date = "2024-02-08"
+compatibility_flags = ["nodejs_compat"]
+
+
+kv_namespaces = [
+  { binding = "YSWS_KV", id = "GENERATE_YOUR_OWN_KV_NAMESPACE_ID" }
+]
+
+[vars]
+VAPID_PUBLIC_KEY = "GENERATE_YOUR_OWN_VAPID_PUBLIC_KEY"
+VAPID_PRIVATE_KEY = "GENERATE_YOUR_OWN_VAPID_PRIVATE_KEY"
+
+[triggers]
+crons = ["*/30 * * * *"]
